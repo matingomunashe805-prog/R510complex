@@ -14,11 +14,38 @@
     box-sizing: border-box;
 }
 
+/* ================================================= */
+/* GLOBAL BACKGROUND IMAGE STYLING */
+/* ================================================= */
 body {
     font-family: var(--font-body);
     line-height: 1.6;
-    color: #f0f0f0; /* Light off-white for contrast on dark backgrounds */
-    background-color: var(--color-black);
+    color: #f0f0f0; 
+    
+    /* 1. Apply the Background Image */
+    background: url('logo.jpeg') no-repeat center center fixed;
+    background-size: cover; 
+    position: relative; 
+    z-index: 1; /* Ensure content is layered above the base body */
+}
+
+/* 2. Create the Fade Effect (Dark, semi-transparent overlay) */
+body::before {
+    content: '';
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* CHANGED: Black overlay with 70% opacity to make the background image more visible */
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 1; /* Place the overlay behind all content (which has z-index > 1) */
+}
+
+/* Ensure all main content sections stack above the body overlay */
+.main-header, main, .main-footer, section {
+    position: relative; 
+    z-index: 2; /* Content must have a higher z-index than the overlay (1) */
 }
 
 .container {
@@ -93,7 +120,7 @@ ul {
 
 /* Header & Navigation */
 .main-header {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('mall-exterior.jpg') no-repeat center center/cover; /* Replace with a suitable black/gold image if available */
+    background: transparent; 
     min-height: 70vh;
     display: flex;
     flex-direction: column;
@@ -107,15 +134,16 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    /* Semi-transparent black for the navbar */
+    background-color: rgba(0, 0, 0, 0.7); 
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .navbar .logo img {
-    height: 60px; /* Adjust as needed */
-    filter: drop-shadow(0 0 5px var(--color-dark-gold)); /* Subtle glow for logo */
+    height: 60px; 
+    filter: drop-shadow(0 0 5px var(--color-dark-gold)); 
 }
 
 .nav-links {
@@ -157,6 +185,7 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: transparent; 
 }
 
 .hero-section h1 {
@@ -178,14 +207,16 @@ section {
     text-align: center;
 }
 
+/* CHANGED: More transparent black section to show background more */
 .section-dark-bg {
-    background-color: var(--color-black);
+    background-color: rgba(26, 26, 26, 0.45); /* var(--color-black) with 45% opacity */
     color: #f0f0f0;
 }
 
+/* CHANGED: More transparent gold section to show background more */
 .section-gold-bg {
-    background-color: var(--color-dark-gold); /* A slightly darker gold for background */
-    color: var(--color-black); /* Black text on gold background */
+    background-color: rgba(184, 134, 11, 0.35); /* var(--color-dark-gold) with 35% opacity */
+    color: var(--color-black); 
 }
 
 .section-gold-bg h2, .section-gold-bg h3 {
@@ -200,7 +231,7 @@ section {
     border-color: var(--color-black);
 }
 .section-gold-bg a.btn:hover {
-    background-color: #333; /* Darker grey on hover */
+    background-color: #333; 
     color: var(--color-light-gold);
 }
 .section-gold-bg a.btn-link {
@@ -221,7 +252,7 @@ section {
 }
 
 .store-card {
-    background-color: #2a2a2a; /* Slightly lighter black for cards */
+    background-color: #2a2a2a; 
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
@@ -258,11 +289,11 @@ section {
 }
 
 .event-item {
-    background-color: var(--color-black); /* Black background for events on gold section */
+    background-color: var(--color-black); 
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    border: 1px solid var(--color-black); /* Black border on black card on gold section */
+    border: 1px solid var(--color-black); 
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -306,12 +337,13 @@ section {
 .gold-icon {
     margin-right: 10px;
     color: var(--color-gold);
-    font-size: 1.2em; /* For actual icons, use font-awesome or similar */
+    font-size: 1.2em; 
 }
 
 /* Footer */
 .main-footer {
-    background-color: #0d0d0d; /* Even darker black for footer */
+    /* Slightly darker semi-transparent black for footer */
+    background-color: rgba(13, 13, 13, 0.95); 
     color: #aaa;
     padding: 50px 0 20px;
     font-size: 0.9em;
@@ -379,7 +411,7 @@ section {
 
 /* Mobile Menu Toggle */
 .menu-toggle {
-    display: none; /* Hidden on desktop */
+    display: none; 
     flex-direction: column;
     cursor: pointer;
 }
@@ -392,8 +424,15 @@ section {
     transition: all 0.3s ease;
 }
 
-/* Responsive Design */
+/* ================================================= */
+/* RESPONSIVE DESIGN FOR MOBILE PHONES */
+/* ================================================= */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 15px; /* Tighter padding for mobile screens */
+    }
+
+    /* Navigation */
     .navbar {
         padding: 15px 20px;
     }
@@ -402,16 +441,18 @@ section {
         display: none; /* Hide nav links by default on mobile */
         flex-direction: column;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(0, 0, 0, 0.95);
         position: absolute;
-        top: 90px; /* Adjust based on header height */
+        top: 90px; 
         left: 0;
         padding: 20px 0;
         text-align: center;
+        border-top: 1px solid var(--color-gold);
+        z-index: 999;
     }
 
     .nav-links.active {
-        display: flex; /* Show when active */
+        display: flex; /* Show when active (via JS) */
     }
 
     .nav-links li {
@@ -422,13 +463,26 @@ section {
         display: flex; /* Show hamburger menu on mobile */
     }
 
-    .hero-section h1 {
-        font-size: 2.8em;
-    }
-    .hero-section p {
-        font-size: 1.2em;
+    /* Hero Section */
+    .hero-section {
+        min-height: 50vh; /* Reduced height on mobile */
+        padding: 50px 10px;
     }
 
+    .hero-section h1 {
+        font-size: 2.5em; /* Smaller font size */
+    }
+    .hero-section p {
+        font-size: 1.1em; /* Smaller font size */
+    }
+
+    /* Grid Sections */
+    .store-grid, 
+    .event-list {
+        grid-template-columns: 1fr; /* Stack items vertically */
+    }
+    
+    /* Footer */
     .footer-content {
         flex-direction: column;
         align-items: center;
@@ -439,78 +493,14 @@ section {
         margin-bottom: 20px;
         padding: 0 10px;
     }
-
-    .store-grid, .event-list {
-        grid-template-columns: 1fr;
+    .footer-col h3 {
+        text-align: center;
     }
-}
-
-/* --- Secret Admin Link Styling --- */
-.copyright {
-    /* Required to position the secret link relative to this block */
-    position: relative; 
-    padding-bottom: 30px; /* Add some space if needed */
-}
-
-/* --- Admin Link Styling (Visible in Footer) --- */
-.copyright {
-    /* Center text, reset any absolute positioning */
-    text-align: center;
-    position: relative; 
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.admin-link {
-    /* Style the link using gold theme */
-    display: block; /* Takes up its own line */
-    font-size: 0.9em;
-    font-weight: 600;
-    color: var(--color-gold); /* Gold text color */
-    margin-top: 10px; /* Separates it from the copyright line */
-}
-
-.admin-link:hover {
-    color: var(--color-light-gold);
-    text-decoration: underline;
-}
-
-/* Apply the logo image and ensure the section takes up the necessary space */
-.hero-section {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0; 
-    min-height: 80vh; /* Ensure it's tall enough to see the logo */
-    
-    /* 1. Apply the Background Image */
-    background-image: url('logo.jpeg'); 
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 70%; /* Adjust size as needed, 70% is a good starting point */
-    background-color: var(--color-black); /* Fallback color */
-}
-
-/* Apply the semi-transparent overlay and content styling */
-.hero-content-wrapper {
-    /* 2. Apply the Fade Effect (Semi-transparent overlay) */
-    background-color: rgba(26, 26, 26, 0.85); /* Black with 85% opacity to dim the logo */
-    width: 170%;
-    height: 130%;
-    flex-grow: 1; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px; /* Restore content padding */
-}
-
-/* Ensure the text is visible and styled correctly */
-.hero-content-wrapper h1 {
-    /* (Include your existing h1 styles here) */
-    color: var(--color-gold); 
-    z-index: 10;
+    .footer-col ul {
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+        display: flex;
+    }
 }
