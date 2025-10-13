@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stores: [
             // All Stores (sorted below by JS)
             { id: 4, title: "R2 Shandis", description: "Shop R2. Contact: 076 310 6472", image: '' },
-            { id: 5, title: "Eyespot Optometrist", description: "Shop R3. Specialist eye care and vision solutions. Contact: 064 538 5715", image: '' },
+            { id: 5, title: "Eyespot Optometrist", description: "Shop R3. Specialist eye care and vision solutions. Contact: 064 538 5715", image: 'eye.jpeg' },
             { id: 6, title: "PATITSO FOOD PARLOR", description: "Shop R8. Delicious meals and takeaways. Contact: 074 968 9747", image: '' },
             { id: 7, title: "Khumalo All In One Shop", description: "General retail and essentials. Contact: +27 82 577 6407", image: '' },
             { id: 1, title: "Glamorous Glow Fashion", description: "Shop L1. Style and trends for every occasion. Open 09:00 - 17:00. Contact: 078 348 1878", image: '' },
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { id: 3, title: "Marabasta Cellular", description: "Mobile phones, accessories, and repairs. Contact: 061 309 6882", image: '' },
         ],
         events: [
-            { id: 101, title: "Grand Opening", date: "October 25, 2025", description: "We're thrilled to invite you to the Grand Opening of the R510 Shopping Complex!", image: 'logo.jpeg' }
+            { id: 101, title: "Grand Opening", date: "October 25, 2025", description: "We're thrilled to invite you to the Grand Opening of the R510 Shopping Complex!", image: 'r510.jpeg' }
             
         ],
         services: [
