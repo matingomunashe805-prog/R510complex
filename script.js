@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Default Data Structure with ALL stores and Hawkers info ---
     const defaultMasterData = {
         stores: [
-            // All Stores (sorted below by JS)
+           
             { id: 4, title: "R2 Shandis", description: "Shop R2. Contact: 076 310 6472", image: '' },
             { id: 5, title: "Eyespot Optometrist", description: "Shop R3. Specialist eye care and vision solutions. Contact: 064 538 5715", image: 'eye.jpeg' },
             { id: 6, title: "PATITSO FOOD PARLOR", description: "Shop R8. Delicious meals and takeaways. Contact: 074 968 9747", image: '' },
@@ -12,17 +12,21 @@ document.addEventListener('DOMContentLoaded', () => {
             { id: 1, title: "Glamorous Glow Fashion", description: "Shop L1. Style and trends for every occasion. Open 09:00 - 17:00. Contact: 078 348 1878", image: '' },
             { id: 2, title: "NDA & DAUGHTER BEAUTY SALON", description: "Shop R7. Full range of beauty and hair services. Contact: 063 679 5462", image: '' },
             { id: 3, title: "Marabasta Cellular", description: "Mobile phones, accessories, and repairs. Contact: 061 309 6882", image: '' },
+            { id: 8, title: "FM Furnishers", description: "Store R6. Contact: +27790834250", image: '' },
+            { id: 9, title: "TC Beauty", description: "Cosmetic Botique shop. STORE L6. Contact: +27791008068", image: '' },
+            { id:10, title: "We Clean Rite Laundry", description: "Open 07:30 - 17:30. Contact: +27799507851", image: '' },
         ],
         events: [
-            { id: 101, title: "Grand Opening", date: "October 25, 2025", description: "We're thrilled to invite you to the Grand Opening of the R510 Shopping Complex!", image: 'r510.jpeg' }
+            { id: 101, title: "Grand Opening", date: "October 25, 2025", description: "We're thrilled to invite you to the Grand Opening of the R510 Shopping Complex!", image: 'r510.jpeg' },
+            { id: 101, title: "★Grand Opening Space PROMO★", date: "October 25, 2025", description: "Vending space for the grand opening is R350★", image: 'r510.jpeg' }
             
         ],
         services: [
-            { id: 205, title: "Hawker/Vending Space", description: "Space available for hawkers. R500 per store.", image: '★' }, // Hawker info added as a service item
+            { id: 205, title: "Hawker/Vending Space", description: "Space available for hawkers. R500 per store.", image: '★' }, 
             { id: 201, title: "Free Wi-Fi", description: "Available throughout the complex.", image: '★' },
             { id: 202, title: "Customer Service Office", description: "Located on room 7.", image: '★' },
             { id: 203, title: "Ample Parking", description: "Parking available.", image: '★' },
-            { id: 204, title: "Restrooms & Baby Changing Facilities", description: "Easily accessible.", image: '★' }
+            { id: 204, title: "Restrooms", description: "Easily accessible.", image: '★' }
         ]
     };
     
