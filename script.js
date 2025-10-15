@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
            
             { id: 4, title: "R2 Shandis", description: "Shop R2. Contact: 076 310 6472", image: '' },
             { id: 5, title: "Eyespot Optometrist", description: "Shop R3. Specialist eye care and vision solutions. Contact: 064 538 5715", image: 'eye.jpeg' },
-            { id: 6, title: "PATITSO FOOD PARLOR", description: "Shop R8. Delicious meals and takeaways. Contact: 074 968 9747", image: '' },
+            { id: 6, title: "PATITSO FOOD PARLOR", description: "Shop R8. Delicious meals and takeaways. Contact: 074 968 9747", image: 'food.jpeg' },
             { id: 7, title: "Khumalo All In One Shop", description: "General retail and essentials. Contact: +27 82 577 6407", image: '' },
             { id: 1, title: "Glamorous Glow Fashion", description: "Shop L1. Style and trends for every occasion. Open 09:00 - 17:00. Contact: 078 348 1878", image: '' },
             { id: 2, title: "NDA & DAUGHTER BEAUTY SALON", description: "Shop R7. Full range of beauty and hair services. Contact: 063 679 5462", image: '' },
             { id: 3, title: "Marabasta Cellular", description: "Mobile phones, accessories, and repairs. Contact: 061 309 6882", image: '' },
-            { id: 8, title: "FM Furnishers", description: "Store R6. Contact: +27790834250", image: '' },
-            { id: 9, title: "TC Beauty", description: "Cosmetic Botique shop. STORE L6. Contact: +27791008068", image: '' },
+            { id: 8, title: "FM Furnishers", description: "Store R6. Contact: +27790834250", image: 'furn.jpeg' },
+            { id: 9, title: "TC Beauty", description: "Cosmetic Botique shop. STORE L6. Contact: +27791008068", image: 'cosmetic.jpeg' },
             { id:10, title: "We Clean Rite Laundry", description: "Open 07:30 - 17:30. Contact: +27799507851", image: '' },
         ],
         events: [
@@ -167,3 +167,4 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionObserver.observe(section);
     });
 });
+
